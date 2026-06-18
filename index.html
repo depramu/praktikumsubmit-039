@@ -6,36 +6,47 @@
     <title>Submit Tugas Praktikum | Cloud Computing</title>
     <style>
         :root {
-            --primary-pink: #ff85a2;
-            --soft-pink: #fce4ec;
-            --dark-pink: #f06292;
-            --white: #ffffff;
+            /* Palet Warna Antariksa */
+            --space-dark: #090a0f;
+            --space-light: #1b2735;
+            --neon-blue: #00f3ff;
+            --neon-purple: #9d4edd;
+            --text-main: #e0e0e0;
+            --container-bg: rgba(20, 25, 40, 0.7);
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--soft-pink);
+            /* Background gradasi menyerupai luar angkasa */
+            background: radial-gradient(ellipse at bottom, var(--space-light) 0%, var(--space-dark) 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            color: var(--text-main);
         }
 
         .container {
-            background-color: var(--white);
+            background-color: var(--container-bg);
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(240, 98, 146, 0.2);
+            /* Efek Glassmorphism dan Neon Glow */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(157, 78, 221, 0.2);
             width: 100%;
             max-width: 400px;
             text-align: center;
         }
 
         h2 {
-            color: var(--dark-pink);
+            color: var(--neon-blue);
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
         }
 
         .form-group {
@@ -46,48 +57,62 @@
         label {
             display: block;
             margin-bottom: 5px;
-            color: var(--dark-pink);
+            color: var(--neon-purple);
             font-size: 0.9rem;
             font-weight: 600;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(157, 78, 221, 0.3);
         }
 
         input[type="text"], select, input[type="file"] {
             width: 100%;
             padding: 12px;
-            border: 2px solid var(--soft-pink);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--text-main);
+            border: 1px solid #333;
             border-radius: 10px;
             box-sizing: border-box;
             outline: none;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+        }
+        
+        /* Penyesuaian warna opsi pada dropdown select */
+        select option {
+            background-color: var(--space-dark);
+            color: var(--text-main);
         }
 
-        input[type="text"]:focus, select:focus {
-            border-color: var(--primary-pink);
+        input[type="text"]:focus, select:focus, input[type="file"]:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
         }
 
         button {
             width: 100%;
-            background-color: var(--primary-pink);
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
             color: white;
             padding: 12px;
             border: none;
             border-radius: 10px;
             font-size: 1rem;
             font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
             margin-top: 1rem;
         }
 
         button:hover {
-            background-color: var(--dark-pink);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
             transform: translateY(-2px);
         }
 
         .footer {
             margin-top: 1.5rem;
             font-size: 0.8rem;
-            color: #aaa;
+            color: #6c757d;
+            letter-spacing: 1px;
         }
     </style>
 </head>
