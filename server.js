@@ -2,11 +2,17 @@ const express = require('express');
 const mysql = require('mysql2');
 const { BlobServiceClient } = require('@azure/storage-blob');
 const multer = require('multer');
+const path = require('path'); // 1. Tambahkan ini di bagian atas
 const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 
-app.use(express.static('public'));
+// app.use(express.static('public')); // 2. HAPUS atau KOMENTAR baris ini
 app.use(express.urlencoded({ extended: true }));
+
+// 3. TAMBAHKAN ROUTE INI untuk memanggil index.html di folder utama
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Koneksi Database (Konfigurasinya di Azure Portal nanti)
 const db = mysql.createConnection({
